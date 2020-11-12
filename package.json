@@ -44,7 +44,7 @@
     ]
   },
   "engines": {
-    "node": "14"
+    "node": "12.x || 14.x"
   },
   "devDependencies": {
     "@types/react-redux": "^7.1.11"
