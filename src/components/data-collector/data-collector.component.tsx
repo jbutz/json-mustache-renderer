@@ -3,7 +3,7 @@ import { Annotation } from '../../models/Annotation';
 import { OReillyResponse } from '../../models/OReillyResponse';
 import { DataInputComponent } from './data-input';
 
-export const DataCollectorComponent = () => {
+export const DataCollectorComponent = ({onDataLoadComplete}: {onDataLoadComplete: Function}) => {
     const [annotations, setAnnotations] = useState([] as Annotation[]);
     const [waitingForData, setWaitingForData] = useState(true);
     const [dataUrl, setDataUrl] = useState('https://learning.oreilly.com/api/v1/annotations/all/?page_size=1000');
@@ -23,7 +23,7 @@ export const DataCollectorComponent = () => {
                 setDataUrl(jsonData.next);
                 setWaitingForData(true);
             } else {
-                // trigger done loading
+                onDataLoadComplete(updatedValue);
             }
         }
         // else throw error
