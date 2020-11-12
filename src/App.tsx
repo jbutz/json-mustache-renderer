@@ -3,10 +3,29 @@ import './App.css';
 import { DataCollectorComponent, MustacheFormatterComponent } from './components';
 import { Annotation } from './models/Annotation';
 
+enum AppStep {
+  One, Two, Three
+}
+
 function App() {
+  const [appStep, setAppSep] = useState<AppStep>(AppStep.One);
   const [annotations, setAnnotations] = useState<Annotation[] | null>(null);
 
+  function handleDataLoadComplete(annotations: Annotation[]) {
+    setAnnotations(annotations);
+    setAppSep(AppStep.Two);
+  }
 
+  function handleTemplateSave(template: string) {
+    console.log(template);
+  }
+
+  switch(appStep) {
+    case AppStep.One:
+      return <DataCollectorComponent onDataLoadComplete={handleDataLoadComplete} />;
+    case AppStep.Two:
+      return <MustacheFormatterComponent onTemplateChange={handleTemplateSave}/>;
+  }
   return (
     <div>
       <DataCollectorComponent onDataLoadComplete={setAnnotations} />

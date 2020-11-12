@@ -42,7 +42,7 @@ export const MustacheFormatterComponent = ({onTemplateChange}: {onTemplateChange
                     </tr>
                 </tbody>
             </table>
-            <textarea value={DEFAULT_TEMPLATE} onChange={() => onTemplateChange(textareaEl.current?.value)}></textarea>
+            <textarea defaultValue={DEFAULT_TEMPLATE} onChange={() => onTemplateChange(textareaEl.current?.value)}></textarea>
         </React.Fragment>  
     )
 }
