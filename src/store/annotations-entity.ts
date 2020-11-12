@@ -68,7 +68,7 @@ const annotationsSlice = createSlice({
 //export const setAnnotationsLoading = () => store.dispatch(annotationsLoading({}));
 //export const setAnnotationsReceived = (annotations: Annotation[]) => store.dispatch(annotationsReceived(annotations.map((x) => x.toJSON())))
 
-const store = configureStore({
+export const store = configureStore({
     reducer: {
         annotations: annotationsSlice.reducer,
     },
