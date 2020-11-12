@@ -1,12 +1,10 @@
 import {
-    createEntityAdapter,
-    createSlice,
     configureStore,
-    createAsyncThunk,
-    PayloadAction,
-} from '@reduxjs/toolkit'
-import { Annotation, AnnotationType } from '../models/Annotation'
-import { OReillyLearningService } from '../services/OReillyLearning'
+    createAsyncThunk, createEntityAdapter,
+    createSlice
+} from '@reduxjs/toolkit';
+import { AnnotationType } from '../models/Annotation';
+import { OReillyLearningService } from '../services/OReillyLearning';
 
 export enum LoadingStatus {
     Idle = 'idle',

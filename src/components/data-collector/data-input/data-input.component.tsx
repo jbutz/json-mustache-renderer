@@ -8,7 +8,7 @@ export const DataInputComponent = ({dataUrl, onReceiveData}: {dataUrl: string; o
 
     return (
         <div>
-            <p>Please open <a href={dataUrl} target="_blank">{dataUrl}</a> and paste the results in the box below then click the button.</p>
+            <p>Please open <a href={dataUrl} target="_blank" rel="noreferrer">{dataUrl}</a> and paste the results in the box below then click the button.</p>
             <textarea ref={textareaEl}></textarea>
             <button onClick={handleReceiveData}>Save Data</button>
         </div>
