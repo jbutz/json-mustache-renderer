@@ -41,7 +41,7 @@ export class OReillyLearningService {
     private async httpGet(url: string): Promise<Response> {
         const resp = await fetch(url, {
             credentials: "include",
-            mode: "cors",
+            mode: "no-cors",
             method: "GET"
         });
 
