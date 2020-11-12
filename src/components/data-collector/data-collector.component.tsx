@@ -23,7 +23,7 @@ export const DataCollectorComponent = ({onDataLoadComplete}: {onDataLoadComplete
                 setDataUrl(jsonData.next);
                 setWaitingForData(true);
             } else {
-                onDataLoadComplete(updatedValue);
+                onDataLoadComplete(updatedValue.reverse());
             }
         }
         // else throw error

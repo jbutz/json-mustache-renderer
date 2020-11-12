@@ -7,6 +7,7 @@ export type AnnotationType = {
     documentChapterUrl: string;
     documentChapterTitle: string;
     annotationHtml: string;
+    annotationText: string;
 };
 
 export class Annotation implements AnnotationType {
@@ -16,6 +17,7 @@ export class Annotation implements AnnotationType {
     public readonly documentChapterUrl: string;
     public readonly documentChapterTitle: string;
     public readonly annotationHtml: string;
+    public readonly annotationText: string;
 
     constructor(annotation: AnnotationType) {
         this.guid = annotation.guid;
@@ -24,6 +26,7 @@ export class Annotation implements AnnotationType {
         this.documentChapterUrl = annotation.documentChapterUrl;
         this.documentChapterTitle = annotation.documentChapterTitle;
         this.annotationHtml = annotation.annotationHtml;
+        this.annotationText = annotation.annotationText;
     }
 
     static fromOReillyAnnotation(input: OReillyAnnotation) {
@@ -33,7 +36,8 @@ export class Annotation implements AnnotationType {
             documentChapterTitle: input.chapter_title,
             documentCoverUrl: input.cover_url,
             documentChapterUrl: input.chapter_url,
-            annotationHtml: input.fragment
+            annotationHtml: input.fragment,
+            annotationText: input.quote,
         });
     }
 
@@ -45,6 +49,7 @@ export class Annotation implements AnnotationType {
             documentChapterUrl: this.documentChapterUrl,
             documentChapterTitle: this.documentChapterTitle,
             annotationHtml: this.annotationHtml,
+            annotationText: this.annotationText,
         };
     }
 }

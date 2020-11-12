@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { DataCollectorComponent } from './components';
+import { DataCollectorComponent, MustacheFormatterComponent } from './components';
 import { Annotation } from './models/Annotation';
 
 function App() {
@@ -10,7 +10,8 @@ function App() {
   return (
     <div>
       <DataCollectorComponent onDataLoadComplete={setAnnotations} />
-      {annotations && annotations.map((a) => (<p key={a.guid}>{a.documentTitle} - {a.documentChapterTitle}<br /><pre dangerouslySetInnerHTML={{__html: a.annotationHtml}}></pre></p>))}
+      <MustacheFormatterComponent onTemplateChange={console.log}/>
+      {annotations && annotations.map((a) => (<p key={a.guid}>{a.documentTitle} - {a.documentChapterTitle}<br /><span dangerouslySetInnerHTML={{__html: a.annotationHtml}}></span></p>))}
     </div>
   );
 }
