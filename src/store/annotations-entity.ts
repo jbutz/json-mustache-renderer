@@ -2,13 +2,25 @@ import {
     createEntityAdapter,
     createSlice,
     configureStore,
+    createAsyncThunk,
+    PayloadAction,
 } from '@reduxjs/toolkit'
 import { Annotation, AnnotationType } from '../models/Annotation'
+import { OReillyLearningService } from '../services/OReillyLearning'
 
-enum LoadingStatus {
+export enum LoadingStatus {
     Idle = 'idle',
     Pending = 'pending'
 }
+
+const oreillyLearningService = new OReillyLearningService();
+
+export const fetchAnnotations = createAsyncThunk('annotations/fetchAll', async () => {
+    const response = await oreillyLearningService.getAllAnnotations();
+    // In this case, `response.data` would be:
+    // [{id: 1, first_name: 'Example', last_name: 'User'}]
+    return response;
+})
 
 const adapter = createEntityAdapter<AnnotationType>({
     selectId: (note) => note.guid,
@@ -18,12 +30,11 @@ const adapter = createEntityAdapter<AnnotationType>({
 
 const annotationsSlice = createSlice({
     name: 'annotations',
-    initialState: adapter.getInitialState({
-        loading: LoadingStatus.Idle
+    initialState: adapter.getInitialState<{ loading: LoadingStatus; error: string | null; }>({
+        loading: LoadingStatus.Idle,
+        error: null,
     }),
     reducers: {
-        // Can pass adapter functions directly as case reducers.  Because we're passing this
-        // as a value, `createSlice` will auto-generate the `annotationAdded` action type / creator
         annotationAdded: adapter.addOne,
         annotationsLoading(state, action) {
             if (state.loading === LoadingStatus.Idle) {
@@ -39,17 +50,23 @@ const annotationsSlice = createSlice({
         },
         annotationUpdated: adapter.updateOne
     },
+    extraReducers: builder => {
+        builder.addCase(fetchAnnotations.fulfilled, (state, action) => {
+            state.loading = LoadingStatus.Idle;
+            adapter.upsertMany(state, (action.payload || []).map((x) => x.toJSON()))
+        })
+        builder.addCase(fetchAnnotations.pending, (state, action) => {
+            state.loading = LoadingStatus.Pending;
+        })
+        builder.addCase(fetchAnnotations.rejected, (state, action) => {
+            state.loading = LoadingStatus.Idle;
+            state.error = action.payload as string;
+        })
+    }
 });
 
-const {
-    annotationAdded,
-    annotationUpdated,
-    annotationsLoading,
-    annotationsReceived,
-} = annotationsSlice.actions;
-
-export const setAnnotationsLoading = () => store.dispatch(annotationsLoading({}));
-export const setAnnotationsReceived = (annotations: Annotation[]) => store.dispatch(annotationsReceived(annotations.map((x) => x.toJSON())))
+//export const setAnnotationsLoading = () => store.dispatch(annotationsLoading({}));
+//export const setAnnotationsReceived = (annotations: Annotation[]) => store.dispatch(annotationsReceived(annotations.map((x) => x.toJSON())))
 
 const store = configureStore({
     reducer: {
@@ -57,7 +74,7 @@ const store = configureStore({
     },
 })
 
-type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>
 
 console.log(store.getState().annotations)
 // { ids: [], entities: {} }
@@ -68,3 +85,12 @@ const annotationsSelectors = adapter.getSelectors<RootState>(
 );
 export const getAllAnnotations = annotationsSelectors.selectAll(store.getState());
 export const isAnnotationsLoading = () => store.getState().annotations.loading === LoadingStatus.Pending;
+
+
+export const {
+    selectById: selectAnnotationById,
+    selectIds: selectAnnotationIds,
+    selectEntities: selectAnnotationEntities,
+    selectAll: selectAllAnnotations,
+    selectTotal: selectTotalAnnotations
+  } = adapter.getSelectors((state: RootState) => state.annotations);

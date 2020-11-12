@@ -2,7 +2,7 @@ import 'whatwg-fetch';
 import { Annotation } from '../models/Annotation';
 import { OReillyAnnotation } from '../models/OReillyAnnotation';
 import { OReillyResponse } from '../models/OReillyResponse';
-import {setAnnotationsLoading, setAnnotationsReceived} from '../store'
+//import {setAnnotationsLoading, setAnnotationsReceived} from '../store'
 
 type Response = {
     status: number;
@@ -12,7 +12,7 @@ type Response = {
 
 export class OReillyLearningService {
     public async getAllAnnotations() {
-        setAnnotationsLoading();
+        //setAnnotationsLoading();
         const annotations: OReillyAnnotation[] = [];
         let resp: Response | null = await this.httpGet('https://learning.oreilly.com/api/v1/annotations/all/?page_size=1000');
         while(resp) {
@@ -33,7 +33,9 @@ export class OReillyLearningService {
             }
         }
 
-        setAnnotationsReceived(annotations.map(Annotation.fromOReillyAnnotation));
+        //setAnnotationsReceived(annotations.map(Annotation.fromOReillyAnnotation));
+
+        return annotations.map(Annotation.fromOReillyAnnotation);
     }
 
     private async httpGet(url: string): Promise<Response> {
