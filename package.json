@@ -13,6 +13,7 @@
     "@types/react-dom": "^16.9.9",
     "lodash.sortby": "^4.7.0",
     "mustache": "^4.0.1",
+    "purecss": "^2.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
@@ -52,6 +53,7 @@
   "devDependencies": {
     "@types/lodash.sortby": "^4.7.6",
     "@types/mustache": "^4.0.1",
-    "@types/react-redux": "^7.1.11"
+    "@types/react-redux": "^7.1.11",
+    "node-sass": "^4.0.0"
   }
 }

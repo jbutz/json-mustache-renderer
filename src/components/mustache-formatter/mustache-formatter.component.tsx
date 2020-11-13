@@ -1,6 +1,7 @@
+import { render } from 'mustache';
 import React, { useRef, useState } from 'react';
 import { Annotation } from '../../models/Annotation';
-import { render } from 'mustache';
+import { ButtonComponent, TextareaComponent } from '../atoms';
 
 const DEFAULT_TEMPLATE = `<h2><a href="{{documentChapterUrl}}">{{documentTitle}} - {{documentChapterTitle}}</a></h2>
 {{{annotationHtml}}}
@@ -51,8 +52,8 @@ export const MustacheFormatterComponent = ({ onTemplateChange, exampleInput }: {
                     </tr>
                 </tbody>
             </table>
-            <textarea ref={textareaEl} defaultValue={DEFAULT_TEMPLATE} onChange={handleTextareaChange}></textarea>
-            <button onClick={() => onTemplateChange(templateString)}>Use Template</button>
+            <TextareaComponent ref={textareaEl} defaultValue={DEFAULT_TEMPLATE} onChange={handleTextareaChange}></TextareaComponent>
+            <ButtonComponent className='pure-button-primary' onClick={() => onTemplateChange(templateString)}>Use Template</ButtonComponent>
             <div>
                 <h2>Preview</h2>
                 <div dangerouslySetInnerHTML={{__html: render(templateString, exampleInput)}}></div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
 import { DataCollectorComponent, MustacheFormatterComponent } from './components';
 import { NoteRendererComponent } from './components/note-renderer';
 import { Annotation } from './models/Annotation';

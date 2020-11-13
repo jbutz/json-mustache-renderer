@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div className="pure-g">
+      <div className="pure-u-1-3" style={{marginLeft: 'auto', marginRight: 'auto'}}><App /></div>
+    </div>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
