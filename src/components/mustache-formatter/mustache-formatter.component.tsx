@@ -1,19 +1,28 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
+import { Annotation } from '../../models/Annotation';
+import { render } from 'mustache';
 
-const DEFAULT_TEMPLATE = `
-<h2><a href="{{documentChapterUrl}}">{{documentTitle}} - {{documentChapterTitle}}</a></h2>
+const DEFAULT_TEMPLATE = `<h2><a href="{{documentChapterUrl}}">{{documentTitle}} - {{documentChapterTitle}}</a></h2>
 {{{annotationHtml}}}
 `;
 
-export const MustacheFormatterComponent = ({onTemplateChange}: {onTemplateChange: Function}) => {
+export const MustacheFormatterComponent = ({ onTemplateChange, exampleInput }: { onTemplateChange: Function, exampleInput: Annotation }) => {
+    const [templateString, setTemplateString] = useState(DEFAULT_TEMPLATE);
     const textareaEl = useRef<HTMLTextAreaElement>(null);
+
+    function handleTextareaChange(e: any) {
+        setTemplateString(textareaEl.current?.value || '')
+    }
+
     return (
         <React.Fragment>
             <p>Explain Mustache templates</p>
             <table>
                 <thead>
-                    <th>Variable</th>
-                    <th>Description</th>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Description</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -42,7 +51,12 @@ export const MustacheFormatterComponent = ({onTemplateChange}: {onTemplateChange
                     </tr>
                 </tbody>
             </table>
-            <textarea defaultValue={DEFAULT_TEMPLATE} onChange={() => onTemplateChange(textareaEl.current?.value)}></textarea>
-        </React.Fragment>  
+            <textarea ref={textareaEl} defaultValue={DEFAULT_TEMPLATE} onChange={handleTextareaChange}></textarea>
+            <button onClick={() => onTemplateChange(templateString)}>Use Template</button>
+            <div>
+                <h2>Preview</h2>
+                <div dangerouslySetInnerHTML={{__html: render(templateString, exampleInput)}}></div>
+            </div>
+        </React.Fragment>
     )
 }

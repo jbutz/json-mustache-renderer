@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { DataCollectorComponent, MustacheFormatterComponent } from './components';
+import { NoteRendererComponent } from './components/note-renderer';
 import { Annotation } from './models/Annotation';
 
 enum AppStep {
@@ -10,6 +11,7 @@ enum AppStep {
 function App() {
   const [appStep, setAppSep] = useState<AppStep>(AppStep.One);
   const [annotations, setAnnotations] = useState<Annotation[] | null>(null);
+  const [templateString, setTemplateString] = useState('');
 
   function handleDataLoadComplete(annotations: Annotation[]) {
     setAnnotations(annotations);
@@ -17,22 +19,20 @@ function App() {
   }
 
   function handleTemplateSave(template: string) {
-    console.log(template);
+    setTemplateString(template);
+    setAppSep(AppStep.Three);
   }
 
   switch(appStep) {
     case AppStep.One:
       return <DataCollectorComponent onDataLoadComplete={handleDataLoadComplete} />;
     case AppStep.Two:
-      return <MustacheFormatterComponent onTemplateChange={handleTemplateSave}/>;
+      return <MustacheFormatterComponent onTemplateChange={handleTemplateSave} exampleInput={annotations ? annotations[0] : {} as any} />;
+    case AppStep.Three:
+      return <NoteRendererComponent annotations={annotations || []} templateString={templateString} />;
+    default:
+      return <p>Error</p>;
   }
-  return (
-    <div>
-      <DataCollectorComponent onDataLoadComplete={setAnnotations} />
-      <MustacheFormatterComponent onTemplateChange={console.log}/>
-      {annotations && annotations.map((a) => (<p key={a.guid}>{a.documentTitle} - {a.documentChapterTitle}<br /><span dangerouslySetInnerHTML={{__html: a.annotationHtml}}></span></p>))}
-    </div>
-  );
 }
 
 export default App;
