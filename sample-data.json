@@ -1,0 +1,168 @@
+{
+    "count": 7,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "identifier": "bfb8daa4-2415-4e0f-bf34-d9488ac922ce",
+            "epub_identifier": "9781492057802",
+            "epub_title": "What Is Domain-Driven Design?",
+            "cover_url": "https://learning.oreilly.com/library/view/what-is-domain-driven/9781492057802/ibis_generated_cover_thumbnail.jpg",
+            "chapter_url": "https://learning.oreilly.com/library/view/what-is-domain-driven/9781492057802/ch01.html",
+            "chapter_title": "1. Analyzing Business Domains",
+            "text": "",
+            "quote": "supporting subdomains support the company’s business. However, contrary to the core subdomains, supporting subdomains do not provide any competitive advantage for the company. They simply support the company’s core business",
+            "fragment": "supporting subdomains support the company’s business. However, contrary to the core subdomains, supporting subdomains do not provide any competitive advantage for the company. They simply support the company’s core business",
+            "ranges": [
+                {
+                    "start": "/SECTION[1]/DIV[1]/SECTION[2]/DIV[1]/SECTION[1]/DIV[1]/SECTION[3]/DIV[1]/P[1]",
+                    "end": "/SECTION[1]/DIV[1]/SECTION[2]/DIV[1]/SECTION[1]/DIV[1]/SECTION[3]/DIV[1]/P[1]",
+                    "startOffset": 22,
+                    "endOffset": 245
+                }
+            ],
+            "is_public": false,
+            "last_modified_time": "2020-11-13T18:09:01.134000Z",
+            "user_identifier": "73a91f82-c011-49fe-81d0-117865556a29",
+            "pk": 57794888
+        },
+        {
+            "identifier": "da2af62e-3759-41d5-af7f-61be594c874a",
+            "epub_identifier": "9781492057802",
+            "epub_title": "What Is Domain-Driven Design?",
+            "cover_url": "https://learning.oreilly.com/library/view/what-is-domain-driven/9781492057802/ibis_generated_cover_thumbnail.jpg",
+            "chapter_url": "https://learning.oreilly.com/library/view/what-is-domain-driven/9781492057802/ch01.html",
+            "chapter_title": "1. Analyzing Business Domains",
+            "text": "",
+            "quote": "generic subdomains are generally complex and hard to implement. However, generic subdomains do not provide any competitive edge for the company. There is no need for innovation or optimization here: battle-tested implementations are widely available, and all companies use them. In other words, generic subdomains are business activities that all companies are performing in the same way.",
+            "fragment": "generic subdomains are generally complex and hard to implement. However, generic subdomains do not provide any competitive edge for the company. There is no need for innovation or optimization here: battle-tested implementations are widely available, and all companies use them. In other words, generic subdomains are business activities that all companies are performing in the same way.",
+            "ranges": [
+                {
+                    "startOffset": 26,
+                    "end": "/SECTION[1]/DIV[1]/SECTION[2]/DIV[1]/SECTION[1]/DIV[1]/SECTION[2]/DIV[1]/P[1]",
+                    "start": "/SECTION[1]/DIV[1]/SECTION[2]/DIV[1]/SECTION[1]/DIV[1]/SECTION[2]/DIV[1]/P[1]",
+                    "endOffset": 414
+                }
+            ],
+            "is_public": false,
+            "last_modified_time": "2020-11-13T18:08:50.658000Z",
+            "user_identifier": "73a91f82-c011-49fe-81d0-117865556a29",
+            "pk": 57794883
+        },
+        {
+            "identifier": "427c77ed-f6cc-42d9-9a30-1b2868142037",
+            "epub_identifier": "9781492057802",
+            "epub_title": "What Is Domain-Driven Design?",
+            "cover_url": "https://learning.oreilly.com/library/view/what-is-domain-driven/9781492057802/ibis_generated_cover_thumbnail.jpg",
+            "chapter_url": "https://learning.oreilly.com/library/view/what-is-domain-driven/9781492057802/ch01.html",
+            "chapter_title": "1. Analyzing Business Domains",
+            "text": "",
+            "quote": "A core subdomain is what a company does differently from its competitors. This may involve inventing new products or services, or optimizing existing processes and thereby reducing costs",
+            "fragment": "A core subdomain is what a company does differently from its competitors. This may involve inventing new products or services, or optimizing existing processes and thereby reducing costs",
+            "ranges": [
+                {
+                    "start": "/SECTION[1]/DIV[1]/SECTION[2]/DIV[1]/SECTION[1]/DIV[1]/SECTION[1]/DIV[1]/P[1]",
+                    "startOffset": 0,
+                    "end": "/SECTION[1]/DIV[1]/SECTION[2]/DIV[1]/SECTION[1]/DIV[1]/SECTION[1]/DIV[1]/P[1]",
+                    "endOffset": 186
+                }
+            ],
+            "is_public": false,
+            "last_modified_time": "2020-11-13T18:08:12.662000Z",
+            "user_identifier": "73a91f82-c011-49fe-81d0-117865556a29",
+            "pk": 57794866
+        },
+        {
+            "identifier": "d220a1fc-641d-4879-89e3-bb54d0cba8cd",
+            "epub_identifier": "9781492057802",
+            "epub_title": "What Is Domain-Driven Design?",
+            "cover_url": "https://learning.oreilly.com/library/view/what-is-domain-driven/9781492057802/ibis_generated_cover_thumbnail.jpg",
+            "chapter_url": "https://learning.oreilly.com/library/view/what-is-domain-driven/9781492057802/ch01.html",
+            "chapter_title": "1. Analyzing Business Domains",
+            "text": "",
+            "quote": "Domain-driven design distinguishes three types of subdomains: core, generic, and supporting",
+            "fragment": "Domain-driven design distinguishes three types of subdomains: core, generic, and supporting",
+            "ranges": [
+                {
+                    "end": "/SECTION[1]/DIV[1]/SECTION[2]/DIV[1]/SECTION[1]/DIV[1]/P[1]",
+                    "start": "/SECTION[1]/DIV[1]/SECTION[2]/DIV[1]/SECTION[1]/DIV[1]/P[1]",
+                    "startOffset": 0,
+                    "endOffset": 91
+                }
+            ],
+            "is_public": false,
+            "last_modified_time": "2020-11-13T18:08:02.813000Z",
+            "user_identifier": "73a91f82-c011-49fe-81d0-117865556a29",
+            "pk": 57794862
+        },
+        {
+            "identifier": "623eb170-bf07-4a98-acc3-860aa3808dd6",
+            "epub_identifier": "9781492057802",
+            "epub_title": "What Is Domain-Driven Design?",
+            "cover_url": "https://learning.oreilly.com/library/view/what-is-domain-driven/9781492057802/ibis_generated_cover_thumbnail.jpg",
+            "chapter_url": "https://learning.oreilly.com/library/view/what-is-domain-driven/9781492057802/ch01.html",
+            "chapter_title": "1. Analyzing Business Domains",
+            "text": "",
+            "quote": "A subdomain is a fine-grained area of business activity. All the subdomains together add up to the company’s business domain—the service it provides to its customers. Implementing a single subdomain is not enough for a company to succeed",
+            "fragment": "A subdomain is a fine-grained area of business activity. All the subdomains together add up to the company’s business domain—the service it provides to its customers. Implementing a single subdomain is not enough for a company to succeed",
+            "ranges": [
+                {
+                    "end": "/SECTION[1]/DIV[1]/SECTION[2]/DIV[1]/P[1]",
+                    "endOffset": 338,
+                    "startOffset": 101,
+                    "start": "/SECTION[1]/DIV[1]/SECTION[2]/DIV[1]/P[1]"
+                }
+            ],
+            "is_public": false,
+            "last_modified_time": "2020-11-13T18:07:30.060000Z",
+            "user_identifier": "73a91f82-c011-49fe-81d0-117865556a29",
+            "pk": 57794850
+        },
+        {
+            "identifier": "b45f2cf6-9922-4467-92f1-53165a9f8960",
+            "epub_identifier": "9781492057802",
+            "epub_title": "What Is Domain-Driven Design?",
+            "cover_url": "https://learning.oreilly.com/library/view/what-is-domain-driven/9781492057802/ibis_generated_cover_thumbnail.jpg",
+            "chapter_url": "https://learning.oreilly.com/library/view/what-is-domain-driven/9781492057802/ch01.html",
+            "chapter_title": "1. Analyzing Business Domains",
+            "text": "",
+            "quote": "A business domain defines the company’s overall area of activity. Generally speaking, it’s the service the company provides to its clients",
+            "fragment": "A <em>business domain</em> defines the company’s overall area of activity. Generally speaking, it’s the service the company provides to its clients",
+            "ranges": [
+                {
+                    "endOffset": 138,
+                    "start": "/SECTION[1]/DIV[1]/SECTION[1]/DIV[1]/P[1]",
+                    "end": "/SECTION[1]/DIV[1]/SECTION[1]/DIV[1]/P[1]",
+                    "startOffset": 0
+                }
+            ],
+            "is_public": false,
+            "last_modified_time": "2020-11-13T18:07:15.834000Z",
+            "user_identifier": "73a91f82-c011-49fe-81d0-117865556a29",
+            "pk": 57794843
+        },
+        {
+            "identifier": "cd9c10f2-fc1a-454d-8824-119541eca89e",
+            "epub_identifier": "9781492057802",
+            "epub_title": "What Is Domain-Driven Design?",
+            "cover_url": "https://learning.oreilly.com/library/view/what-is-domain-driven/9781492057802/ibis_generated_cover_thumbnail.jpg",
+            "chapter_url": "https://learning.oreilly.com/library/view/what-is-domain-driven/9781492057802/preface01.html",
+            "chapter_title": "Introduction",
+            "text": "",
+            "quote": "What Is Domain-Driven Design?\nDDD is a methodology that covers the whole software development lifecycle, from gathering requirements to low-level design. Its core premise is that to build better software, we have to align its design with the business’s domain, needs, and strategy. That’s where the name comes from: (business) domain-driven (software) design.\n\nDDD proposes to align business and technical concerns through analysis of the business domain, modeling of the problem domain—the problems that should be solved by the software—and making design decisions according to the model of the problem domain. It provides tools for making design decisions on two levels: strategic and tactical.\n\nStrategic Design\nDDD’s strategic patterns and practices provide a framework for analyzing a company’s business domain and distilling the software’s problem domain—i.e., what problems should be solved or addressed by the software.\n\nThe strategic tools also provide a robust framework for making high-level architectural decisions, including tasks such as decomposing a system into modular components and mapping the interaction patterns between them.\n\nTactical Design\nDDD’s tactical patterns support making low-level design decisions relating to the implementation of the system’s components and their business logic.\n\nThe goal of tactical design is to architect the solution so that it fits the problem domain as closely as possible.",
+            "fragment": "<h1>What Is Domain-Driven Design?</h1>\n        <p>DDD is a methodology that covers the whole software development lifecycle, from gathering requirements to low-level design. Its core premise is that to build better software, we have to align its design with the business’s domain, needs, and strategy. That’s where the name comes from: (business) domain-driven (software) design.</p>\n        <p>DDD proposes to align business and technical concerns through analysis of the business domain, modeling of the problem domain—the problems that should be solved by the software—and making design decisions according to the model of the problem domain. It provides tools for making design decisions on two levels: <em>strategic</em> and <em>tactical</em>.</p>\n        <section data-type=\"sect2\" data-pdf-bookmark=\"Strategic Design\"><div class=\"sect2\" id=\"strategic_design_1\">\n          <h2>Strategic Design</h2>\n          <p>DDD’s strategic patterns and practices provide a framework for analyzing a company’s business domain and distilling the software’s problem domain—i.e., what problems should be solved or addressed by the software. </p>\n          <p>The strategic tools also provide a robust framework for making high-level architectural decisions, including tasks such as decomposing a system into modular components and mapping the interaction patterns between them.</p>\n        </div></section>\n        <section data-type=\"sect2\" data-pdf-bookmark=\"Tactical Design\"><div class=\"sect2\" id=\"tactical_design_1\">\n          <h2>Tactical Design</h2>\n          <p>DDD’s tactical patterns support making low-level design decisions relating to the implementation of the system’s components and their business logic.</p>\n          <p>The goal of tactical design is to architect the solution so that it fits the problem domain as closely as possible.</p></div></section>",
+            "ranges": [
+                {
+                    "startOffset": 0,
+                    "end": "/SECTION[1]/DIV[1]/SECTION[1]/DIV[1]/SECTION[2]/DIV[1]/P[2]",
+                    "start": "/SECTION[1]/DIV[1]/SECTION[1]/DIV[1]/H1[1]",
+                    "endOffset": 115
+                }
+            ],
+            "is_public": false,
+            "last_modified_time": "2020-11-13T18:06:59.236000Z",
+            "user_identifier": "73a91f82-c011-49fe-81d0-117865556a29",
+            "pk": 57794836
+        }
+    ]
+}
