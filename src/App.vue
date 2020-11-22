@@ -1,32 +1,74 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-    <DataInput />
+    <div class="pure-g input-container">
+      <div class="pure-u-1-2 pad-right">
+        <div>
+          <DataInput v-model="dataInput" />
+        </div>
+      </div>
+      <div class="pure-u-1-2 pad-left">
+        <div>
+          <DataInput v-model="mustacheInput" />
+        </div>
+      </div>
+    </div>
+    <div style="padding-top: 1em; padding-bottom: 1em"><hr /></div>
+    <div style="padding-top: 1em; padding-bottom: 1em"><hr /></div>
+    <div class="pure-g">
+      <div class="pure-u-1-5"></div>
+      <div class="pure-u-3-5">
+        <article>
+          <Renderer :inputData="dataInput" :inputTemplate="mustacheInput" />
+        </article>
+      </div>
+      <div class="pure-u-1-5"></div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
 import DataInput from './components/DataInput.vue';
+import Renderer from './components/Renderer.vue';
 
 @Component({
   components: {
-    HelloWorld,
-    DataInput
-  }
+    DataInput,
+    Renderer,
+  },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  public dataInput = '{}';
+  public mustacheInput = 'Hello';
+
+  get validJsonInput () {
+    try {
+      JSON.parse(this.dataInput);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+}
 </script>
 
 <style lang="scss">
+@import "../node_modules/purecss/build/base.css";
+@import "../node_modules/purecss/build/grids.css";
+@import "../node_modules/purecss/build/forms.css";
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin: 2em;
+}
+
+.pad-right {
+  > * {
+    padding-right: 0.5em;
+  }
+}
+
+.pad-left {
+  > * {
+    padding-left: 0.5em;
+  }
 }
 </style>

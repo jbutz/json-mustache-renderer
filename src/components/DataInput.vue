@@ -1,24 +1,19 @@
 <template>
-  <div>
-    <textarea v-model="inputData"></textarea>
+  <div class="pure-form">
+    <textarea
+      class="pure-input-1"
+      v-bind:value="value"
+      v-on:input="$emit('input', $event.target.value)"
+    ></textarea>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Model, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class DataInput extends Vue {
-  @Model('change', { type: String }) inputData = '';
-
-  handleDataChange (event: Event) {
-    // v-on:change="handleDataChange"
-    const el = event.target as HTMLTextAreaElement;
-    console.log('>>>', el.value, this.inputData);
-    // this.inputData = el.value;
-    // console.log('>>>', el.value);
-    // this.$emit('data-change', el.value);
-  }
+  @Prop(String) value: string | undefined;
 }
 </script>
 
