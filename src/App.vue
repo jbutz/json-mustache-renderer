@@ -38,8 +38,8 @@ import Renderer from './components/Renderer.vue';
   },
 })
 export default class App extends Vue {
-  public dataInput = '{}';
-  public mustacheInput = 'Hello';
+  public dataInput = '{"world":"world"}';
+  public mustacheInput = 'Hello {{ world }}';
 
   get validJsonInput () {
     try {
